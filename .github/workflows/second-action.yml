@@ -1,0 +1,16 @@
+name: Second Actions Workflow
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  display-python-version:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v4
+          with:
+            python-version: '3.x'
+            architecture: 'x64'
+        - name: Display Python version
+          run: |
+            python -c "import sys; print(f'This runner uses Python: {sys.version} !')"
+            echo "Congratulations! Your script completed successfully!"
