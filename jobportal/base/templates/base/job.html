@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="job-detail-container">
+    <div class="job-title-jobs">
+        <h1>{{ job.title }}</h1>
+    </div>
+
+    <div class="job-category-jobs">
+        <p><strong>Category:</strong> {{ job.category.name }}</p>
+    </div>
+
+    <div class="job-description-jobs">
+        <p><strong>Job Description:</strong> {{ job.description }}</p>
+    </div>
+
+    <div class="job-salary-jobs">
+        <h4><strong>Salary:</strong> {{ job.salary }}-zl</h4>
+    </div>
+
+    <div class="job-city-jobs">
+        <h2><strong>City:</strong> {{ job.location }}</h2>
+    </div>
+
+    <div class="job-company-jobs">
+        <h2><strong>Our Company:</strong> {{ job.company }}</h2>
+    </div>
+
+    <div class="job-posted-info">
+        <small>Job posted {{ job.posted|timesince }} ago</small>
+    </div>
+</div>
+{% endblock content %}

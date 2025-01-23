@@ -1,0 +1,47 @@
+{% extends 'main.html'%}
+
+
+{% block content %}
+
+
+<h1>{{user.username}}</h1>
+
+<div class="joblist-container">
+    
+
+    <div>
+        <h3>Browse Category</h3>
+        <hr>
+
+
+        <div>
+            <a href="{%url 'job-list'%}">All</a>
+        </div>
+
+        {% for category in categories%}
+        <div>
+            <a href="{%url 'job-list'%}?q={{category.name}}">{{category.name}}</a>
+        </div>
+        {%endfor%}
+    </div>
+    
+    {% for job in jobs %}
+        <div>
+            {% if request.user == job.created_by%}
+            <a href="{% url 'update-job' job.id %}">Edit</a>
+            <a href="{% url 'delete-job' job.id %}">Delete</a>
+            {%endif%}
+            
+            <a href="{% url 'profile' job.created_by.id %}">{{job.created_by.username}}</a>
+            <h5> <a href="{% url 'job' job.id %}"> {{job.title}}<a></h5>
+                <h4>{{job.salary}}-zl</h4>
+                <small>{{job.category.name}}</small>
+            <hr>
+        </div>
+        {%endfor%}
+    <div>
+
+    </div>
+</div>
+
+{% endblock %}
