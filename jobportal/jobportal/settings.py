@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$2p1+4dcz2^-(#t72be0(=nf+!n^&*b0^pgmacya*z4z3-77$k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'False'
+DEBUG = 'True'
 
-ALLOWED_HOSTS = ['steve-jobs-cgc3gudkhsfth9an.polandcentral-01.azurewebsites.net']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,9 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[
-    BASE_DIR/'static'
+    BASE_DIR/'staticfiles'
 ]
-STATICFILES_STORAGE='whitenoise.storage.CompressedMainfestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

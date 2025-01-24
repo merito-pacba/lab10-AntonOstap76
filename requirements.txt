@@ -1,6 +1,0 @@
-django
-whitenoise
-pylint
-pytest
-python-dotenv
-gunicorn
